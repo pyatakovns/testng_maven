@@ -1,10 +1,13 @@
 FROM ubuntu:20.04
-LABEL maintainer="Nikolay Pyatakov  <pyatakovns@mail.ru>"
+LABEL maintainer="Nikolay Pyatakov <pyatakovns@mail.ru>"
+
+RUN DEBIAN_FRONTEND=noninteractive TZ="Europe/Moscow"
 
 # Install java
 RUN apt-get update \
  && apt-get install --no-install-recommends -y \
  wget \
+ tzdata \
  gnupg2 \
  default-jdk
 
